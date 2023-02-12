@@ -18,4 +18,4 @@ interface userInfo
   username:string,
   password:string
 }
-export default router
+module.exports= router
