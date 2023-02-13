@@ -5,6 +5,7 @@ import fs from 'fs';
 import body from 'koa-body';
 import Router from 'koa-router';
 import json from 'koa-json';
+import globalException from './globalExce';
 class AllRouterLoader
 {
   static allRouterLoader:AllRouterLoader=new AllRouterLoader()
@@ -14,6 +15,7 @@ class AllRouterLoader
   {
    this.app=app
    const rootRouter= this.loadAllRouterWrapper()
+   this.app.use(globalException)
    this.app.use(rootRouter.routes())
   //  监听方法
    this.listen()
