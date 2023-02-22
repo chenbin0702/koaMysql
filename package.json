@@ -1,6 +1,7 @@
 {
 	"scripts": {
-		"dev": "nodemon --watch src/ -e ts --exec ts-node ./src/app.ts"
+		"dev": "set NODE_ENV=dev&& nodemon --watch src/ -e ts --exec ts-node ./src/app.ts",
+		"prod": "set NODE_ENV=prod&& nodemon --watch src/ -e ts --exec ts-node ./src/app.ts"
 	},
 	"dependencies": {
 		"@types/jsonwebtoken": "^9.0.1",
