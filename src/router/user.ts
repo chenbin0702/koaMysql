@@ -1,6 +1,8 @@
+import { UserInfo } from '@/dao/UserDao';
 import {Context} from 'koa';
 import Router from 'koa-router';
 import {success} from '../common/ResResult';
+import {addUser} from '../dao/UserDao';
 const router=new Router()
 // 路由预处理
 router.prefix('/user')
@@ -11,12 +13,9 @@ router.get('/findUserinfo/:username',async(ctx:Context)=>{
 })
 // 增加用户
 router.post('/addUser',async(ctx:Context)=>{
-  const user:userInfo=ctx.request.body
-  ctx.body=success(`注册成功 ${user.username}`)
+  const userinfo:UserInfo=ctx.request.body
+ const dbUserInfo=await addUser(userinfo)
+ ctx.body=success(dbUserInfo)
 })
-interface userInfo
-{
-  username:string,
-  password:string
-}
+
 module.exports= router
