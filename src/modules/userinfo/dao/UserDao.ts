@@ -1,4 +1,4 @@
-import {model} from '../defineModel';
+import {model} from '../model/BaseDao';
 import {Op,Sequelize} from 'sequelize';
 
 class UserDao

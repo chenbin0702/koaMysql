@@ -76,7 +76,7 @@ class AllRouterLoader
   }
   listen()
   {
-    this.app.listen(8832)
+    this.app.listen(8232)
     console.log("serve start");
     
   }

@@ -1,8 +1,8 @@
-import { UserInfo } from '@/dao/UserDao';
+import { UserInfo } from '@/modules/userinfo/dao/UserDao';
 import {Context} from 'koa';
 import Router from 'koa-router';
 import {success} from '../common/ResResult';
-import UserDao from '../dao/UserDao';
+import UserDao from '../modules/userinfo/dao/UserDao';
 const router=new Router()
 // 路由预处理
 router.prefix('/user')
